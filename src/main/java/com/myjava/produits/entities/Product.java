@@ -1,13 +1,10 @@
 package com.myjava.produits.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-public class Produit {
+public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idProduit;
@@ -15,10 +12,21 @@ public class Produit {
     private Double prixProduit;
     private Date dateCreation;
 
-    public Produit() {
+    @ManyToOne
+    private Category category;
+
+    public Category getCategory() {
+        return category;
     }
 
-    public Produit(String nomProduit, Double prixProduit, Date dateCreation) {
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
+    public Product() {
+    }
+
+    public Product(String nomProduit, Double prixProduit, Date dateCreation) {
         this.nomProduit = nomProduit;
         this.prixProduit = prixProduit;
         this.dateCreation = dateCreation;
