@@ -13,11 +13,8 @@ public interface ProductService {
     void deleteProduitById(Long id);
     Optional<Product> getProduit(Long id);
     List<Product> getAllProduits();
-    List<Product> findByNomProduit(String nom);
-    List<Product> findByNomProduitContains(String nom);
-    List<Product> findByNomPrix (String nom, Double prix);
-    List<Product> findByCategorie (Category category);
-    List<Product> findByCategorieIdCat(Long id);
-    List<Product> findByOrderByNomProduitAsc();
-    List<Product> trierProduitsNomsPrix();
+    List<Product> findByProductName(String productName);
+    List<Product> findByProductNameContains(String productName);
+    List<Product> findByProductNameAndProductPrice (String productName, Double price);
+    List<Product> findByCategory_IdCat(Long id);
 }

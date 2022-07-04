@@ -45,37 +45,24 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public List<Product> findByNomProduit(String nom) {
-        return null;
+    public List<Product> findByProductName(String productName) {
+        return productRepository.findByProductName(productName);
     }
 
     @Override
-    public List<Product> findByNomProduitContains(String nom) {
-        return null;
+    public List<Product> findByProductNameContains(String productName) {
+        return productRepository.findByProductNameContains(productName);
     }
 
     @Override
-    public List<Product> findByNomPrix(String nom, Double prix) {
-        return null;
+    public List<Product> findByProductNameAndProductPrice(String productName, Double price) {
+        return productRepository.findByProductNameAndProductPrice(productName, price);
     }
 
     @Override
-    public List<Product> findByCategorie(Category category) {
+    public List<Product> findByCategory_IdCat(Long id) {
         return null;
     }
 
-    @Override
-    public List<Product> findByCategorieIdCat(Long id) {
-        return null;
-    }
 
-    @Override
-    public List<Product> findByOrderByNomProduitAsc() {
-        return null;
-    }
-
-    @Override
-    public List<Product> trierProduitsNomsPrix() {
-        return null;
-    }
 }
