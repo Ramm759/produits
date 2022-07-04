@@ -1,40 +1,39 @@
 package com.myjava.produits;
 
-import com.myjava.produits.entities.Produit;
-import com.myjava.produits.repository.ProduitRepository;
+import com.myjava.produits.entities.Product;
+import com.myjava.produits.repository.ProductRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.Date;
 import java.util.List;
-import java.util.Optional;
 
 @SpringBootTest
-class ProduitsApplicationTests {
+class ProductApplicationTests {
     @Autowired
-    private ProduitRepository produitRepository;
+    private ProductRepository productRepository;
 
     @Test
     public void testCreateProduit() {
-        Produit produit = new Produit("PC Asus",1500.500,new Date());
-        produitRepository.save(produit);
+        Product product = new Product("PC Asus",1500.500,new Date());
+        productRepository.save(product);
     }
 
     @Test
     public void testFindProduit()
     {
-        Produit produit = produitRepository.findById(2L).get();
+        Product product = productRepository.findById(2L).get();
         // TODO : Gérer absence de résultat
-        System.out.println(produit);
+        System.out.println(product);
     }
 
     @Test
     public void testUpdateProduit()
     {
-        Produit p = produitRepository.findById(1L).get();
+        Product p = productRepository.findById(1L).get();
         p.setPrixProduit(2000.0);
-        produitRepository.save(p);
+        productRepository.save(p);
 
         System.out.println(p);
     }
@@ -42,15 +41,15 @@ class ProduitsApplicationTests {
     @Test
     public void testDeleteProduit()
     {
-        produitRepository.deleteById(1L);
+        productRepository.deleteById(1L);
     }
 
     @Test
     public void testFindAllProduits()
     {
-        List<Produit> prods = produitRepository.findAll();
+        List<Product> prods = productRepository.findAll();
 
-        for (Produit p:prods)
+        for (Product p:prods)
             System.out.println(p);
 
     }
