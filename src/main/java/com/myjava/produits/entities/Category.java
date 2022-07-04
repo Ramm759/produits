@@ -1,8 +1,6 @@
 package com.myjava.produits.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.List;
@@ -13,8 +11,8 @@ public class Category {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idCat;
 
-    private String nomCat;
-    private String descriptionCat;
+    private String categoryName;
+    private String description;
 
 
     @OneToMany(mappedBy = "category")
@@ -24,9 +22,9 @@ public class Category {
     public Category() {
     }
 
-    public Category(String nomCat, String descriptionCat, List<Product> products) {
-        this.nomCat = nomCat;
-        this.descriptionCat = descriptionCat;
+    public Category(String categoryName, String description, List<Product> products) {
+        this.categoryName = categoryName;
+        this.description = description;
         this.products = products;
     }
 
@@ -38,20 +36,20 @@ public class Category {
         this.idCat = idCat;
     }
 
-    public String getNomCat() {
-        return nomCat;
+    public String getCategoryName() {
+        return categoryName;
     }
 
-    public void setNomCat(String nomCat) {
-        this.nomCat = nomCat;
+    public void setCategoryName(String nomCat) {
+        this.categoryName = nomCat;
     }
 
-    public String getDescriptionCat() {
-        return descriptionCat;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDescriptionCat(String descriptionCat) {
-        this.descriptionCat = descriptionCat;
+    public void setDescription(String descriptionCat) {
+        this.description = descriptionCat;
     }
 
     public List<Product> getProducts() {

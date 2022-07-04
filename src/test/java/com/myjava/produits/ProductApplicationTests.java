@@ -32,7 +32,7 @@ class ProductApplicationTests {
     public void testUpdateProduit()
     {
         Product p = productRepository.findById(1L).get();
-        p.setPrixProduit(2000.0);
+        p.setProductPrice(2000.0);
         productRepository.save(p);
 
         System.out.println(p);
@@ -55,26 +55,27 @@ class ProductApplicationTests {
     }
 
 
-    /*@Test
-    public void testFindProduitByNom()
+    @Test
+    public void testFindProduitByProductName()
     {
-        List<Produit> prods = produitRepository.findByNomProduit("PS 4");
+        List<Product> products = productRepository.findByProductName("PS 4");
 
-        for (Produit p:prods)
+        for (Product p:products)
             System.out.println(p);
 
     }
+
 
     @Test
     public void testFindProduitByNomContains()
     {
-        List<Produit> prods = produitRepository.findByNomProduitContains("P");
+        List<Product> products = productRepository.findByProductNameContains("P");
 
-        for (Produit p:prods)
-            System.out.println(p);
+        for (Product product:products)
+            System.out.println(product);
 
     }
-
+/*
     @Test
     public void testfindByNomPrix()
     {

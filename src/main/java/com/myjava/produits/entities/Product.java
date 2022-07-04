@@ -7,10 +7,10 @@ import java.util.Date;
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idProduit;
-    private String nomProduit;
-    private Double prixProduit;
-    private Date dateCreation;
+    private Long idProduct;
+    private String productName;
+    private Double productPrice;
+    private Date creationDate;
 
     @ManyToOne
     private Category category;
@@ -26,51 +26,51 @@ public class Product {
     public Product() {
     }
 
-    public Product(String nomProduit, Double prixProduit, Date dateCreation) {
-        this.nomProduit = nomProduit;
-        this.prixProduit = prixProduit;
-        this.dateCreation = dateCreation;
+    public Product(String productName, Double productPrice, Date creationDate) {
+        this.productName = productName;
+        this.productPrice = productPrice;
+        this.creationDate = creationDate;
     }
 
     @Override
     public String toString() {
         return "Produit{" +
-                "idProduit=" + idProduit +
-                ", nomProduit='" + nomProduit + '\'' +
-                ", prixProduit=" + prixProduit +
-                ", dateCreation=" + dateCreation +
+                "idProduit=" + idProduct +
+                ", nomProduit='" + productName + '\'' +
+                ", prixProduit=" + productPrice +
+                ", dateCreation=" + creationDate +
                 '}';
     }
 
-    public Long getIdProduit() {
-        return idProduit;
+    public Long getIdProduct() {
+        return idProduct;
     }
 
-    public void setIdProduit(Long idProduit) {
-        this.idProduit = idProduit;
+    public void setIdProduct(Long idProduit) {
+        this.idProduct = idProduit;
     }
 
-    public String getNomProduit() {
-        return nomProduit;
+    public String getProductName() {
+        return productName;
     }
 
-    public void setNomProduit(String nomProduit) {
-        this.nomProduit = nomProduit;
+    public void setProductName(String nomProduit) {
+        this.productName = nomProduit;
     }
 
-    public Double getPrixProduit() {
-        return prixProduit;
+    public Double getProductPrice() {
+        return productPrice;
     }
 
-    public void setPrixProduit(Double prixProduit) {
-        this.prixProduit = prixProduit;
+    public void setProductPrice(Double prixProduit) {
+        this.productPrice = prixProduit;
     }
 
-    public Date getDateCreation() {
-        return dateCreation;
+    public Date getCreationDate() {
+        return creationDate;
     }
 
-    public void setDateCreation(Date dateCreation) {
-        this.dateCreation = dateCreation;
+    public void setCreationDate(Date dateCreation) {
+        this.creationDate = dateCreation;
     }
 }
