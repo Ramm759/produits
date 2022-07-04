@@ -1,5 +1,6 @@
 package com.myjava.produits;
 
+import com.myjava.produits.entities.Category;
 import com.myjava.produits.entities.Product;
 import com.myjava.produits.repository.ProductRepository;
 import org.junit.jupiter.api.Test;
@@ -75,42 +76,28 @@ class ProductApplicationTests {
             System.out.println(product);
 
     }
-/*
+
     @Test
     public void testfindByNomPrix()
     {
-        List<Produit> prods = produitRepository.findByNomPrix("PS 4", 1000.0);
-        for (Produit p : prods)
+        List<Product> products = productRepository.findByProductNameAndProductPrice("PS 4", 1500.5);
+        for (Product product : products)
         {
-            System.out.println(p);
-        }
-    }
-
-
-    @Test
-    public void testfindByCategorie()
-    {
-        Categorie cat = new Categorie();
-        cat.setIdCat(1L);
-
-        List<Produit> prods = produitRepository.findByCategorie(cat);
-        for (Produit p : prods)
-        {
-            System.out.println(p);
+            System.out.println(product);
         }
     }
 
     @Test
     public void findByCategorieIdCat()
     {
-        List<Produit> prods = produitRepository.findByCategorieIdCat(1L);
-        for (Produit p : prods)
+        List<Product> products = productRepository.findByCategory_IdCat(1L);
+        for (Product product : products)
         {
-            System.out.println(p);
+            System.out.println(product);
         }
     }
 
-
+/*
     @Test
     public void testfindByOrderByNomProduitAsc()
     {

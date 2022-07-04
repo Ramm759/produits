@@ -34,11 +34,12 @@ public class Product {
 
     @Override
     public String toString() {
-        return "Produit{" +
-                "idProduit=" + idProduct +
-                ", nomProduit='" + productName + '\'' +
-                ", prixProduit=" + productPrice +
-                ", dateCreation=" + creationDate +
+        return "Product{" +
+                "idProduct=" + idProduct +
+                ", productName='" + productName + '\'' +
+                ", productPrice=" + productPrice +
+                ", creationDate=" + creationDate +
+                ", category=" + category.getDescription() +
                 '}';
     }
 
