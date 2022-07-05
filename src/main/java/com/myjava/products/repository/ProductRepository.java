@@ -1,6 +1,6 @@
-package com.myjava.produits.repository;
+package com.myjava.products.repository;
 
-import com.myjava.produits.entities.Product;
+import com.myjava.products.entities.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Repository;
@@ -14,7 +14,9 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
 
     List<Product> findByProductNameContains(String productName);
 
-    List<Product> findByCategory_IdCat(@NonNull Long idCat);
+    List<Product> findByCategory_IdCat(Long idCat);
+
+
 
     List<Product> findByProductNameAndProductPrice(String productName, Double productPrice);
 }

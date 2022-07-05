@@ -1,8 +1,7 @@
-package com.myjava.produits.service;
+package com.myjava.products.service;
 
-import com.myjava.produits.entities.Category;
-import com.myjava.produits.entities.Product;
-import com.myjava.produits.repository.ProductRepository;
+import com.myjava.products.entities.Product;
+import com.myjava.products.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,32 +14,32 @@ public class ProductServiceImpl implements ProductService {
     private ProductRepository productRepository;
 
     @Override
-    public Product saveProduit(Product product) {
+    public Product saveProduct(Product product) {
         return productRepository.save(product);
     }
 
     @Override
-    public Product updateProduit(Product product) {
+    public Product updateProduct(Product product) {
         return productRepository.save(product);
     }
 
     @Override
-    public void deleteProduit(Product product) {
+    public void deleteProduct(Product product) {
         productRepository.delete(product);
     }
 
     @Override
-    public void deleteProduitById(Long id) {
+    public void deleteProductById(Long id) {
         productRepository.deleteById(id);
     }
 
     @Override
-    public Optional<Product> getProduit(Long id) {
+    public Optional<Product> getProduct(Long id) {
         return productRepository.findById(id);
     }
 
     @Override
-    public List<Product> getAllProduits() {
+    public List<Product> getAllProducts() {
         return productRepository.findAll();
     }
 
@@ -60,9 +59,7 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public List<Product> findByCategory_IdCat(Long id) {
-        return null;
+    public List<Product> findByCategory_IdCat(Long idCat) {
+        return productRepository.findByCategory_IdCat(idCat);
     }
-
-
 }

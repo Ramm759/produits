@@ -1,7 +1,7 @@
-package com.myjava.produits;
+package com.myjava.products;
 
-import com.myjava.produits.entities.Product;
-import com.myjava.produits.repository.ProductRepository;
+import com.myjava.products.entities.Product;
+import com.myjava.products.repository.ProductRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

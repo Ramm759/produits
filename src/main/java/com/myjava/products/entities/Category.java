@@ -1,4 +1,4 @@
-package com.myjava.produits.entities;
+package com.myjava.products.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
